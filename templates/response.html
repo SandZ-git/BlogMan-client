@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+ <main id="main">
+        <!-- ======= Facts Section ======= -->
+    <section class="breadcrumbs">
+      <div class="hero-container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">{% if is_error: %}Error{% else: %} Success {% endif %}</h3>
+        </div>
+      </div>
+    </section><!-- End Facts Section -->
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-lg-8">
+            <div class="portfolio-info">
+
+                {% if is_error: %}
+                <ul>
+                <li><strong>Error</strong>: {{ response }}</li>
+                </ul>
+                {% else: %}
+                <ul>
+                <li><strong>Success</strong>: {{ response }}</li>
+                </ul>
+
+                {% endif %}
+              <hr>
+            </div>
+    </div>
+    </div>
+      </div>
+    </section>
+ </main>
+
+{% include "footer.html" %}

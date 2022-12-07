@@ -1,0 +1,52 @@
+{% include "header.html" %}
+
+<main id="main">
+    <!-- ======= Facts Section ======= -->
+    <section class="breadcrumbs">
+        <div class="hero-container" data-aos="fade-up">
+            <div class="section-header">
+                <h3 class="section-title">Create New Post</h3>
+            </div>
+        </div>
+    </section><!-- End Facts Section -->
+
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="form">
+                        <form action="{{ url_for('create_post') }}" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title"
+                                       required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subtitle" id="subtitle"
+                                       placeholder="Subtitle" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="number" min=1 class="form-control" name="country" id="country"
+                                       placeholder="Country ID" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="number" min=1 class="form-control" name="author" id="author"
+                                       placeholder="Author ID" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="body" rows="5" placeholder="Body"
+                                          required></textarea>
+                            </div>
+
+                            <div class="text-left form-group mt-3">
+                                <button class="submit-btn" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% include "footer.html" %}

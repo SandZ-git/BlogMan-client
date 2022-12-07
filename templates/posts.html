@@ -1,0 +1,38 @@
+{% include "header.html" %}
+
+ <main id="main">
+        <!-- ======= Facts Section ======= -->
+    <section class="breadcrumbs">
+      <div class="hero-container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">All BLog Posts</h3>
+        </div>
+      </div>
+    </section><!-- End Facts Section -->
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-lg-8">
+            <div class="portfolio-info">
+              {% for post in all_posts: %}
+              <ul>
+                <li><strong>Id</strong>: {{ post.id }}</li>
+                <li><strong>Title</strong>: {{ post.title }}</li>
+                <li><strong>Subtitle</strong>: {{ post.subtitle }}</li>
+                <li><strong>Body</strong>: {{ post.body|safe }}</li>
+                <li><strong>Author ID</strong>: {{ post.author_id }}</li>
+                <li><strong>Country ID</strong>: {{ post.country_id }}</li>
+                <li><strong>Date</strong>: {{ post.date }}</li>
+                <li><strong>Image</strong>: {{ post.image }}</li>
+              </ul>
+              <hr>
+              {% endfor %}
+            </div>
+    </div>
+    </div>
+      </div>
+    </section>
+ </main>
+
+{% include "footer.html" %}

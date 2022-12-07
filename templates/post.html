@@ -1,0 +1,48 @@
+{% include "header.html" %}
+
+ <main id="main">
+        <!-- ======= Facts Section ======= -->
+    <section class="breadcrumbs">
+      <div class="hero-container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">{% if is_error: %}Error{% else: %}{{ requested_post.title }} {% endif %}</h3>
+        </div>
+      </div>
+    </section><!-- End Facts Section -->
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-lg-8">
+            <div class="portfolio-info">
+
+                {% if is_error: %}
+                <ul>
+                <li><strong>Error</strong>: {{ requested_post }}</li>
+                </ul>
+                {% elif is_response: %}
+                <ul>
+                <li><strong>Success</strong>: {{ requested_post }}</li>
+                </ul>
+                {% else: %}
+
+              <ul>
+                <li><strong>Id</strong>: {{ requested_post.id }}</li>
+                <li><strong>Title</strong>: {{ requested_post.title }}</li>
+                <li><strong>Subtitle</strong>: {{ requested_post.subtitle }}</li>
+                <li><strong>Body</strong>: {{ requested_post.body|safe }}</li>
+                <li><strong>Author ID</strong>: {{ requested_post.author_id }}</li>
+                <li><strong>Country ID</strong>: {{ requested_post.country_id }}</li>
+                <li><strong>Date</strong>: {{ requested_post.date }}</li>
+                <li><strong>Image</strong>: {{ requested_post.image }}</li>
+              </ul>
+                {% endif %}
+              <hr>
+            </div>
+    </div>
+    </div>
+      </div>
+    </section>
+ </main>
+
+{% include "footer.html" %}
